@@ -4,6 +4,7 @@
 ./xml
 coverage.xml
 *.xml
+.idea/misc.xml
 
 .idea/*
 .idea/
