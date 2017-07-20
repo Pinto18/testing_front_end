@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Test Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-07-20 13:44:10</p>
-<p class='attribute'><strong>Duration:</strong> 0:01:42.426329</p>
-<p class='attribute'><strong>Status:</strong> Failure 1 Error 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-07-20 15:36:30</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:37.483891</p>
+<p class='attribute'><strong>Status:</strong> Pass 1 Error 1</p>
 
 <p class='description'>Front End Tests</p>
 </div>
@@ -222,21 +222,21 @@ function showOutput(id, name) {
 </tr>
 
 <tr class='errorClass'>
-    <td>Integration_Tests.AudioFileTests</td>
-    <td>2</td>
+    <td>Test_Audio_Files.AudioFileTests</td>
+    <td>1</td>
+    <td>0</td>
     <td>0</td>
     <td>1</td>
-    <td>1</td>
-    <td><a href="javascript:showClassDetail('c1',2)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
 <tr id='ft1.1' class='none'>
-    <td class='failCase'><div class='testcase'>test_two_audio_files_playing_simultaneously</div></td>
+    <td class='errorCase'><div class='testcase'>test_two_audio_files_playing_simultaneously: Testing that when one audio file is played after another</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        fail</a>
+        error</a>
 
     <div id='div_ft1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
@@ -245,11 +245,21 @@ function showOutput(id, name) {
         </div>
         <pre>
         
-ft1.1: No such thing
-Traceback (most recent call last):
-  File "/Users/nicholasdipinto1/Desktop/Test_Front_End/Integration_Tests.py", line 35, in test_two_audio_files_playing_simultaneously
-    self.assertTrue(isElementPresent(self. driver, "/ *[ @ id = \"PlayBtn-2\"]"))
-AssertionError: False is not true
+ft1.1: Traceback (most recent call last):
+  File "/Users/nicholasdipinto1/Desktop/Test_Front_End/Test_Audio_Files.py", line 38, in test_two_audio_files_playing_simultaneously
+    self.play_button2.click()
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 77, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/selenium/webdriver/remote/webelement.py", line 493, in _execute
+    return self._parent.execute(command, params)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/selenium/webdriver/remote/webdriver.py", line 256, in execute
+    self.error_handler.check_response(response)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/selenium/webdriver/remote/errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=59.0.3071.115)
+  (Driver info: chromedriver=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262),platform=Mac OS X 10.12.5 x86_64)
+
 
 
         </pre>
@@ -259,40 +269,25 @@ AssertionError: False is not true
     </td>
 </tr>
 
-<tr id='ft1.2' class='none'>
-    <td class='errorCase'><div class='testcase'>test_two_audio_files_playing_simultaneously</div></td>
-    <td colspan='5' align='center'>
+<tr class='passClass'>
+    <td>Test_Zip_Files.ZipFileTestCases</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
 
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
-        error</a>
-
-    <div id='div_ft1.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft1.2: No such thing
-Traceback (most recent call last):
-  File "/Users/nicholasdipinto1/Desktop/Test_Front_End/Integration_Tests.py", line 52, in tearDown
-    inst.driver.quit()
-AttributeError: type object 'AudioFileTests' has no attribute 'driver'
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_that_user_cannot_submit_nothing: Testing that pressing the Submit button when no</div></td>
+    <td colspan='5' align='center'>pass</td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
     <td>2</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
     <td>1</td>
     <td>&nbsp;</td>
 </tr>
