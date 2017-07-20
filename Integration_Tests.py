@@ -8,18 +8,28 @@ from helper import *
 
 
 class AudioFileTests(unittest.TestCase):
+
     def setUp(inst):
         inst.driver = webdriver.Chrome('C:/Users/ann_ejones/Documents/8woc2017/node_modules/chromedriver/lib/chromedriver/chromedriver.exe')
         inst.driver.implicitly_wait(30)
         inst.driver.maximize_window()
         inst.driver.get('localhost:3000')
 
+    def tearDown(inst):
+        inst.driver.quit()
+
+
     def test_two_audio_files_playing_simultaneously(self):
         navigate_to_projects_page(self.driver)
-        navigate_to_a_chunk(self.driver)
+        selecting_language_filter(self.driver)
+        selecting_a_project(self.driver)
+        selecting_a_chapter(self.driver)
+        selecting_a_chunk(self.driver)
+        #navigate_to_a_chunk(self.driver)
+
 
         # wait 60 seconds
-        time.sleep(60)
+        time.sleep(15)
         # 60 seconds derived form time it takes to load both chunks
         #value may change as chunks load faster
 
@@ -32,13 +42,17 @@ class AudioFileTests(unittest.TestCase):
         self.play_button2.click()
 
         #verify that the first audio is paused now that second audio file is playing
-        self.assertTrue(self.isElementPresent("/ *[ @ id = \"PlayBtn-2\"]"))
+        self.assertTrue(isElementPresent(self.driver, "/ *[ @ id = \"PlayBtn-2\"]"))
 
 
-@classmethod
-def tearDownClass(inst):
-    # close the browser window
-    inst.driver.quit()
+
+
+
+
+
+
+
+
 
 
 
