@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Test Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-07-20 09:57:25</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:04.749758</p>
-<p class='attribute'><strong>Status:</strong> Pass 1 Error 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-07-20 10:43:15</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:03.915989</p>
+<p class='attribute'><strong>Status:</strong> Error 2</p>
 
 <p class='description'>Front End Tests</p>
 </div>
@@ -221,31 +221,34 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='passClass'>
+<tr class='errorClass'>
     <td>Integration_Tests.AudioFileTests</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
-<tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_two_audio_files_playing_simultaneously</div></td>
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_two_audio_files_playing_simultaneously</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
-        pass</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
 
-    <div id='div_pt1.1' class="popup_window">
+    <div id='div_ft1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt1.1: Error with 'Select Language' Filter
+ft1.1: Traceback (most recent call last):
+  File "/Users/nicholasdipinto1/Desktop/Test_Front_End/Integration_Tests.py", line 15, in test_two_audio_files_playing_simultaneously
+    self.navigate_to_projects_page()
+AttributeError: 'AudioFileTests' object has no attribute 'navigate_to_projects_page'
 
 
         </pre>
@@ -279,9 +282,8 @@ pt1.1: Error with 'Select Language' Filter
         </div>
         <pre>
         
-ft2.1: Error with 'Select Language' Filter
-Traceback (most recent call last):
-  File "/Users/nicholasdipinto1/Desktop/Test_Front_End/Integration_Tests.py", line 21, in tearDownClass
+ft2.1: Traceback (most recent call last):
+  File "/Users/nicholasdipinto1/Desktop/Test_Front_End/Integration_Tests.py", line 22, in tearDownClass
     inst.driver.quit()
 AttributeError: type object 'AudioFileTests' has no attribute 'driver'
 
@@ -296,9 +298,9 @@ AttributeError: type object 'AudioFileTests' has no attribute 'driver'
 <tr id='total_row'>
     <td>Total</td>
     <td>2</td>
-    <td>1</td>
     <td>0</td>
-    <td>1</td>
+    <td>0</td>
+    <td>2</td>
     <td>&nbsp;</td>
 </tr>
 </table>
