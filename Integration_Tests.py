@@ -1,6 +1,6 @@
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.common.by import By
+import time
 import unittest
 from helper import *
 
@@ -15,10 +15,32 @@ class AudioFileTests(unittest.TestCase):
         inst.driver.get('localhost:3000')
 
     def test_two_audio_files_playing_simultaneously(self):
+        self.navigate_to_projects_page()
+        self.navigate_to_a_chunk()
         navigate_to_projects_page(self.driver)
         navigate_to_a_chunk(self.driver)
         play_audio_file(self.driver)
 
+        # wait 60 seconds
+        time.sleep(60)
+        # 60 seconds derived form time it takes to load both chunks
+        #value may change as chunks load faster
+
+        #identify and click on two audio files to play
+        self.play_button1 = self.driver.find_element_by_xpath("//*[@id=\"PlayBtn-2\"]")
+        self.play_button1.click()
+        self.play_button2 = self.driver.find_element_by_xpath("// *[ @ id = \"PlayBtn-2\"]")
+        # wait 3 seconds for first audio file to start playing
+        time.sleep(3)
+        self.play_button2.click()
+
+        #verify that the first audio is paused now that second audio file is playing
+        self.assertTrue(self.isElementPresent("/ *[ @ id = \"PlayBtn-2\"]"))
+
+    @classmethod
+    def tearDownClass(inst):
+        # close the browser window
+        inst.driver.quit()
 
 
     
@@ -26,6 +48,14 @@ class AudioFileTests(unittest.TestCase):
 def tearDownClass(inst):
     # close the browser window
     inst.driver.quit()
+
+    def isElementPresent(self, locator):
+        try:
+            self.driver.find_element_by_xpath(locator)
+        except NoSuchElementException:
+            print ('No such thing')
+            return False
+        return True
 
 if __name__ == '__main__':
     unittest.main()
