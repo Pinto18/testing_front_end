@@ -1,9 +1,11 @@
 .idea/modules.xml
 .idea/vcs.xml
-./iml
-./xml
+*.iml
 coverage.xml
 *.xml
+TestSummary.html
+*.pyc
+.gitignore
 
 .idea/*
 .idea/
