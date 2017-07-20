@@ -16,11 +16,16 @@ class AudioFileTests(unittest.TestCase):
         """Testing that when one audio file is played after another
         that the first audio file will stop playing when the second
         starts."""
+
+        #navigate to page where we can listen to takes
         navigate_to_projects_page(self.driver)
-        navigate_to_a_chunk(self.driver)
+        selecting_language_filter(self.driver)
+        selecting_a_project(self.driver)
+        selecting_a_chapter(self.driver)
+        selecting_a_chunk(self.driver)
 
         # wait 60 seconds
-        time.sleep(60)
+        #time.sleep(60)
         # 60 seconds derived form time it takes to load both chunks
         #value may change as chunks load faster
 
@@ -53,9 +58,6 @@ class AudioFileTests(unittest.TestCase):
     #     self.projects_button.click()
     #     self.assertTrue(!(Boolean.parseboolean(self.play_button1.get_attribute("ended"))))
 
-
-
-    @classmethod
     def tearDown(inst):
         # close the browser window
         inst.driver.quit()
