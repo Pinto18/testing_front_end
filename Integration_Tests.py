@@ -31,7 +31,7 @@ class AudioFileTests(unittest.TestCase):
         self.assertTrue(self.isElementPresent("/ *[ @ id = \"PlayBtn-2\"]"))
 
     @classmethod
-    def tearDownClass(inst):
+    def tearDown(inst):
         # close the browser window
         inst.driver.quit()
 
