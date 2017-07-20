@@ -1,7 +1,4 @@
-from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
 import time
-import unittest
 from helper import *
 
 
@@ -17,7 +14,7 @@ class AudioFileTests(unittest.TestCase):
         that the first audio file will stop playing when the second
         starts."""
 
-        #navigate to page where we can listen to takes
+        # navigate to page where we can listen to takes
         navigate_to_projects_page(self.driver)
         selecting_language_filter(self.driver)
         selecting_a_project(self.driver)
@@ -25,11 +22,11 @@ class AudioFileTests(unittest.TestCase):
         selecting_a_chunk(self.driver)
 
         # wait 60 seconds
-        #time.sleep(60)
+        time.sleep(60)
         # 60 seconds derived form time it takes to load both chunks
-        #value may change as chunks load faster
+        # value may change as chunks load faster
 
-        #identify and click on two audio files to play
+        # identify and click on two audio files to play
         self.play_button1 = self.driver.find_element_by_xpath("//*[@id=\"PlayBtn-2\"]")
         self.play_button1.click()
         self.play_button2 = self.driver.find_element_by_xpath("// *[ @ id = \"PlayBtn-2\"]")
@@ -37,10 +34,10 @@ class AudioFileTests(unittest.TestCase):
         time.sleep(3)
         self.play_button2.click()
 
-        #verify that the first audio is paused now that second audio file is playing
-        self.assertTrue(isElementPresent(self. driver, "/ *[ @ id = \"PlayBtn-2\"]"))
+        # verify that the first audio is paused now that second audio file is playing
+        self.assertTrue(isElementPresent(self.driver, "/ *[ @ id = \"PlayBtn-2\"]"))
 
-        #Clean Up Testing Environment
+        # Clean Up Testing Environment
         self.pause_button1 = self.driver.find_element_by_xpath("//*[@id=\"PauseBtn-2\"]")
         self.pause_button1.click()
         self.pause_button2 = self.driver.find_element_by_xpath("//*[@id=\"PauseBtn-2\"]")
@@ -61,6 +58,7 @@ class AudioFileTests(unittest.TestCase):
     def tearDown(inst):
         # close the browser window
         inst.driver.quit()
+
 
 if __name__ == '__main__':
     unittest.main()

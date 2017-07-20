@@ -21,23 +21,21 @@
       <file leaf-file-name="Test_Audio_Files.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Test_Front_End/Test_Audio_Files.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="27" column="9" lean-forward="false" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#0#30#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Test_Zip_Files.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Test_Zip_Files.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Test_Front_End/Test_Zip_Files.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="26" column="113" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="26" selection-end-column="113" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="234">
+              <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -45,16 +43,14 @@
       <file leaf-file-name="helper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Test_Front_End/helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="69" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="174">
+              <caret line="66" column="38" lean-forward="true" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Run_Test_Suites_With_HTML_Reporter.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Run_Test_Suites_With_HTML_Reporter.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../Test_Front_End/Run_Test_Suites_With_HTML_Reporter.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
@@ -95,11 +91,11 @@
       <list>
         <option value="$PROJECT_DIR$/../Test_Front_End/helper_functions.py" />
         <option value="$PROJECT_DIR$/../Test_Front_End/Integration_Tests.py" />
-        <option value="$PROJECT_DIR$/../Test_Front_End/Run_Test_Suites_With_HTML_Reporter.py" />
         <option value="$PROJECT_DIR$/../Test_Front_End/TestSummary.html" />
-        <option value="$PROJECT_DIR$/../Test_Front_End/helper.py" />
-        <option value="$PROJECT_DIR$/../Test_Front_End/Test_Audio_Files.py" />
         <option value="$PROJECT_DIR$/../Test_Front_End/Test_Zip_Files.py" />
+        <option value="$PROJECT_DIR$/../Test_Front_End/Test_Audio_Files.py" />
+        <option value="$PROJECT_DIR$/../Test_Front_End/helper.py" />
+        <option value="$PROJECT_DIR$/../Test_Front_End/Run_Test_Suites_With_HTML_Reporter.py" />
       </list>
     </option>
   </component>
@@ -424,16 +420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Test_Front_End/Run_Test_Suites_With_HTML_Reporter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="14" column="53" lean-forward="false" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Test_Front_End/TestSummary.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -442,32 +428,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../Test_Front_End/Test_Zip_Files.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../Test_Front_End/Test_Audio_Files.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="27" column="9" lean-forward="false" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#30#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../Test_Front_End/helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="69" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="174">
+          <caret line="66" column="38" lean-forward="true" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Test_Front_End/Test_Zip_Files.py">
+    <entry file="file://$PROJECT_DIR$/../Test_Front_End/Run_Test_Suites_With_HTML_Reporter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="26" column="113" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="26" selection-end-column="113" />
+        <state relative-caret-position="152">
+          <caret line="14" column="53" lean-forward="false" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
           <folding>
-            <element signature="e#0#30#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
