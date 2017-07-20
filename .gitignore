@@ -5,6 +5,8 @@
 coverage.xml
 *.xml
 
+*.pyc
+*.html
 .idea/*
 .idea/
 .idea/testing_selenium.xml
