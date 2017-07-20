@@ -30,7 +30,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Test_Zip_Files.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Test_Zip_Files.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Test_Front_End/Test_Zip_Files.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="264">
@@ -38,6 +38,16 @@
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestSummary.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../Test_Front_End/TestSummary.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="213" column="12" lean-forward="false" selection-start-line="213" selection-start-column="8" selection-end-line="213" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,6 +95,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>HEAD</find>
+    </findStrings>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -93,6 +108,7 @@
         <option value="$PROJECT_DIR$/../Test_Front_End/Run_Test_Suites_With_HTML_Reporter.py" />
         <option value="$PROJECT_DIR$/../Test_Front_End/helper.py" />
         <option value="$PROJECT_DIR$/../Test_Front_End/Test_Zip_Files.py" />
+        <option value="$PROJECT_DIR$/../Test_Front_End/TestSummary.html" />
       </list>
     </option>
   </component>
@@ -454,6 +470,14 @@
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Test_Front_End/TestSummary.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="213" column="12" lean-forward="false" selection-start-line="213" selection-start-column="8" selection-end-line="213" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
