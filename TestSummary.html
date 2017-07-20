@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Test Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-07-20 11:32:32</p>
-<p class='attribute'><strong>Duration:</strong> 0:01:41.285849</p>
-<p class='attribute'><strong>Status:</strong> Failure 1 Error 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-07-20 14:08:05</p>
+<p class='attribute'><strong>Duration:</strong> 0:01:05.105000</p>
+<p class='attribute'><strong>Status:</strong> Failure 1</p>
 
 <p class='description'>Front End Tests</p>
 </div>
@@ -247,47 +247,9 @@ function showOutput(id, name) {
         
 ft1.1: No such thing
 Traceback (most recent call last):
-  File "/Users/nicholasdipinto1/Desktop/Test_Front_End/Integration_Tests.py", line 29, in test_two_audio_files_playing_simultaneously
-    self.assertTrue(self.isElementPresent("/ *[ @ id = \"PlayBtn-2\"]"))
+  File "C:\Users\ann_ejones\Documents\testing_selenium\Integration_Tests.py", line 45, in test_two_audio_files_playing_simultaneously
+    self.assertTrue(isElementPresent(self.driver, "/ *[ @ id = \"PlayBtn-2\"]"))
 AssertionError: False is not true
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='errorClass'>
-    <td>unittest.suite._ErrorHolder</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
-</tr>
-
-<tr id='ft2.1' class='none'>
-    <td class='errorCase'><div class='testcase'>AudioFileTests)</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
-        error</a>
-
-    <div id='div_ft2.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft2.1: No such thing
-Traceback (most recent call last):
-  File "/Users/nicholasdipinto1/Desktop/Test_Front_End/Integration_Tests.py", line 40, in tearDownClass
-    inst.driver.quit()
-AttributeError: type object 'AudioFileTests' has no attribute 'driver'
 
 
         </pre>
@@ -299,10 +261,10 @@ AttributeError: type object 'AudioFileTests' has no attribute 'driver'
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>2</td>
+    <td>1</td>
     <td>0</td>
     <td>1</td>
-    <td>1</td>
+    <td>0</td>
     <td>&nbsp;</td>
 </tr>
 </table>
