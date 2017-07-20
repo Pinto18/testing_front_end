@@ -7,7 +7,7 @@ from helper import *
 
 class AudioFileTests(unittest.TestCase):
     def setUp(inst):
-        inst.driver = webdriver.Chrome()
+        inst.driver = webdriver.Chrome('C:/Users/ann_ejones/Documents/8Woc2017/node_modules/chromedriver/lib/chromedriver/chromedriver.exe'	)
         inst.driver.implicitly_wait(30)
         inst.driver.maximize_window()
         inst.driver.get('localhost:3000')
