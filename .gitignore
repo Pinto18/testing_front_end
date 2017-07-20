@@ -6,7 +6,7 @@ coverage.xml
 *.xml
 .idea/misc.xml
 
-.idea/*
+.idea/* 
 .idea/
 .idea/testing_selenium.xml
 .idea/testing_selenium.iml
