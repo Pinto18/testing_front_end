@@ -15,11 +15,8 @@ class AudioFileTests(unittest.TestCase):
         inst.driver.get('localhost:3000')
 
     def test_two_audio_files_playing_simultaneously(self):
-        self.navigate_to_projects_page()
-        self.navigate_to_a_chunk()
         navigate_to_projects_page(self.driver)
         navigate_to_a_chunk(self.driver)
-        play_audio_file(self.driver)
 
         # wait 60 seconds
         time.sleep(60)
@@ -37,25 +34,13 @@ class AudioFileTests(unittest.TestCase):
         #verify that the first audio is paused now that second audio file is playing
         self.assertTrue(self.isElementPresent("/ *[ @ id = \"PlayBtn-2\"]"))
 
-    @classmethod
-    def tearDownClass(inst):
-        # close the browser window
-        inst.driver.quit()
 
-
-    
 @classmethod
 def tearDownClass(inst):
     # close the browser window
     inst.driver.quit()
 
-    def isElementPresent(self, locator):
-        try:
-            self.driver.find_element_by_xpath(locator)
-        except NoSuchElementException:
-            print ('No such thing')
-            return False
-        return True
+
 
 if __name__ == '__main__':
     unittest.main()

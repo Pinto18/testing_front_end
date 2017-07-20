@@ -34,6 +34,15 @@ def navigate_to_a_chunk(driver):
         print("Error while navigating to chunk")
     return True
 
+
+def isElementPresent(driver, locator):
+    try:
+        driver.find_element_by_xpath(locator)
+    except NoSuchElementException:
+        print ('No such thing')
+        return False
+    return True
+
 #helper method to play audio file from selected project
 def play_audio_file(driver):
     play_button = driver.find_element_by_xpath('//*[@id="Triangle"]')
