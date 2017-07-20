@@ -23,7 +23,8 @@ class ZipFileTestCases(unittest.TestCase):
         self.submit_button = self.driver.find_element_by_xpath("//*[@id=\"root\"]/div/div[2]/div/form/button")
         self.submit_button.click()
         text = "There was an error uploading the file: Error: Request failed with status code 400"
-        self.assertTrue(isElementPresent(self.driver, "(//*[contains(text(), '" + text + "')] | //*[@value='" + text + "'])"))
+        self.assertTrue(isElementPresent(self.driver,
+                                         "(//*[contains(text(), '" + text + "')] | //*[@value='" + text + "'])"))
 
     def tearDown(inst):
         # close the browser window
