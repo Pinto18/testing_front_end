@@ -1,5 +1,9 @@
 from helper import *
-
+import unittest
+from selenium import webdriver
+import selenium
+import time
+import HTMLTestRunner
 
 class ZipFileTestCases(unittest.TestCase):
     def setUp(inst):
@@ -29,10 +33,13 @@ class ZipFileTestCases(unittest.TestCase):
         selecting_language_filter(self.driver)
         selecting_a_project(self.driver)
         # Manually upload...during test
+        time.sleep(2)
         self.choose_file = self.driver.find_element_by_xpath('//*[@id="root"]/div/div[2]/div/form/div/input')
         self.choose_file.click()
+        time.sleep(20)
+        text = "There was an error uploading the file:"
         self.assertTrue(isElementPresent(self.driver,
-                                         "(//*[contains(text(), '"  "')] | //*[@value='" "'])"))
+                                         "(//*[contains(text(), '" + text + "')] | //*[@value='" + text + "'])"))
 
 
         # testing that uploading a bad zipfile produces error message (test case #5)                                               "(//*[contains(text(), '" "')] | //*[@value='" "'])"))
@@ -41,11 +48,14 @@ class ZipFileTestCases(unittest.TestCase):
         navigate_to_projects_page(self.driver)
         selecting_language_filter(self.driver)
         selecting_a_project(self.driver)
+        time.sleep(2)
         # Manually upload...during test
         self.choose_file = self.driver.find_element_by_xpath('//*[@id="root"]/div/div[2]/div/form/div/input')
         self.choose_file.click()
+        time.sleep(10)
+        text = "There was an error uploading the file:"
         self.assertTrue(isElementPresent(self.driver,
-                                         "(//*[contains(text(), '"  "')] | //*[@value='" "'])"))
+                                         "(//*[contains(text(), '" + text + "')] | //*[@value='" + text + "'])"))
 
     def tearDown(inst):
         # close the browser window
