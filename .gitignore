@@ -116,6 +116,7 @@ ENV/
 # IDE Specific files
 /.idea/*.xml
 .idea/
+.idea/*.xml
 .meta/
 *.metadata
 >>>>>>> origin/dev
