@@ -1,7 +1,7 @@
 import time
 from helper import *
-import unittest
 from selenium import webdriver
+import unittest
 
 class AudioFileTests(unittest.TestCase):
     def setUp(inst):
@@ -56,9 +56,9 @@ class AudioFileTests(unittest.TestCase):
     #     self.projects_button.click()
     #     self.assertTrue(!(Boolean.parseboolean(self.play_button1.get_attribute("ended"))))
 
-    def tearDown(inst):
+    def tearDown(self):
         # close the browser window
-        inst.driver.quit()
+        self.driver.quit()
 
 
 if __name__ == '__main__':

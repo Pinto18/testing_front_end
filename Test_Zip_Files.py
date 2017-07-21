@@ -62,4 +62,4 @@ class ZipFileTestCases(unittest.TestCase):
 
     def tearDown(inst):
         # close the browser window
-        inst.driver.quit()
+        self.driver.quit()
