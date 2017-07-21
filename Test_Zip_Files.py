@@ -1,8 +1,5 @@
-from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
-import time
-import unittest
 from helper import *
+
 
 class ZipFileTestCases(unittest.TestCase):
     def setUp(inst):
@@ -15,7 +12,7 @@ class ZipFileTestCases(unittest.TestCase):
         """Testing that pressing the Submit button when no
         zip file is chosen will cause an error message to appear"""
 
-        #navigate to page where we upload a zip file
+        # navigate to page where we upload a zip file
         navigate_to_projects_page(self.driver)
         selecting_language_filter(self.driver)
         selecting_a_project(self.driver)

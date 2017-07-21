@@ -1,7 +1,5 @@
-from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.common.by import By
-import unittest
+
 
 # helper method for navigating to the Projects page of the website
 def navigate_to_projects_page(driver):
@@ -12,7 +10,8 @@ def navigate_to_projects_page(driver):
         print("Could not find 'Projects' Link")
     return True
 
-#method to select a language from the filter
+
+# method to select a language from the filter
 def selecting_language_filter(driver):
     try:
         language_filter = driver.find_element_by_xpath(
@@ -25,7 +24,8 @@ def selecting_language_filter(driver):
         print("Error while navigating to language selection")
     return True
 
-#method to select a project from filtered list
+
+# method to select a project from filtered list
 def selecting_a_project(driver):
     try:
         project_selection = driver.find_element_by_xpath(
@@ -35,7 +35,8 @@ def selecting_a_project(driver):
         print("Error while selecting a project")
     return True
 
-#method to select a chapter
+
+# method to select a chapter
 def selecting_a_chapter(driver):
     try:
         chapter_selection = driver.find_element_by_xpath(
@@ -45,7 +46,8 @@ def selecting_a_chapter(driver):
         print("Error while selecting a chapter")
     return True
 
-#method to select a chunk
+
+# method to select a chunk
 def selecting_a_chunk(driver):
     try:
         chunk_selection = driver.find_element_by_xpath(
@@ -56,10 +58,11 @@ def selecting_a_chunk(driver):
     return True
 
 
-#helper method to play audio file from selected project
+# helper method to play audio file from selected project
 def play_audio_file(driver):
     play_button = driver.find_element_by_xpath('//*[@id="Triangle"]')
     play_button.click()
+
 
 def isElementPresent(driver, locator):
     try:
@@ -68,16 +71,3 @@ def isElementPresent(driver, locator):
         print ('No such thing')
         return False
     return True
-
-
-
-
-
-
-
-
-
-
-
-
-
