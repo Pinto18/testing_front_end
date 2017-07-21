@@ -5,11 +5,11 @@ import unittest
 
 
 class AudioFileTests(unittest.TestCase):
-    def setUp(inst):
-        inst.driver = webdriver.Chrome()
-        inst.driver.implicitly_wait(30)
-        inst.driver.maximize_window()
-        inst.driver.get('localhost:3000')
+    def setUp(self):
+        self.driver = webdriver.Chrome()
+        self.driver.implicitly_wait(30)
+        self.driver.maximize_window()
+        self.driver.get('localhost:3000')
 
     def test_two_audio_files_playing_simultaneously(self):
         """Testing that when one audio file is played after another
@@ -57,9 +57,9 @@ class AudioFileTests(unittest.TestCase):
     #     self.projects_button.click()
     #     self.assertTrue(!(Boolean.parseboolean(self.play_button1.get_attribute("ended"))))
 
-    def tearDown(inst):
+    def tearDown(self):
         # close the browser window
-        inst.driver.quit()
+        self.driver.quit()
 
 
 if __name__ == '__main__':

@@ -4,11 +4,11 @@ import unittest
 
 
 class ZipFileTestCases(unittest.TestCase):
-    def setUp(inst):
-        inst.driver = webdriver.Chrome()
-        inst.driver.implicitly_wait(30)
-        inst.driver.maximize_window()
-        inst.driver.get('localhost:3000')
+    def setUp(self):
+        self.driver = webdriver.Chrome()
+        self.driver.implicitly_wait(30)
+        self.driver.maximize_window()
+        self.driver.get('localhost:3000')
 
     def test_that_user_cannot_submit_nothing(self):
         """Testing that pressing the Submit button when no
@@ -25,6 +25,6 @@ class ZipFileTestCases(unittest.TestCase):
         self.assertTrue(isElementPresent(self.driver,
                                          "(//*[contains(text(), '" + text + "')] | //*[@value='" + text + "'])"))
 
-    def tearDown(inst):
+    def tearDown(self):
         # close the browser window
-        inst.driver.quit()
+        self.driver.quit()
