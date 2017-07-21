@@ -1,9 +1,8 @@
 from helper import *
 import unittest
 from selenium import webdriver
-import selenium
 import time
-import HTMLTestRunner
+
 
 class ZipFileTestCases(unittest.TestCase):
     def setUp(inst):
@@ -28,7 +27,9 @@ class ZipFileTestCases(unittest.TestCase):
                                          "(//*[contains(text(), '" + text + "')] | //*[@value='" + text + "'])"))
 
     # testing that uploading a non zip file produces error message (test case #5)
-    def test_that_error_message_appears_with_nonzip_extension(self):
+    def test_that_error_message_appears_with_nontR_extension(self):
+        """Testing that error uploading file error appears when uploading
+        non .tR file"""
         navigate_to_projects_page(self.driver)
         selecting_language_filter(self.driver)
         selecting_a_project(self.driver)
@@ -44,7 +45,9 @@ class ZipFileTestCases(unittest.TestCase):
 
         # testing that uploading a bad zipfile produces error message (test case #5)                                               "(//*[contains(text(), '" "')] | //*[@value='" "'])"))
 
-    def test_that_error_message_appears_with_badzipfile(self):
+    def test_that_error_message_appears_with_badtRfile(self):
+        """Testing that error uploading file apears when uploading
+        .tr File with no mp3 or content"""
         navigate_to_projects_page(self.driver)
         selecting_language_filter(self.driver)
         selecting_a_project(self.driver)
