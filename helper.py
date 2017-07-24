@@ -18,7 +18,7 @@ def selecting_language_filter(driver):
             "//*[@id=\"root\"]/div/div[2]/div/div[1]/div[1]/input")
         language_filter.send_keys("English demo2")
         drop_down_item = driver.find_element_by_xpath(
-            "//*[@id=\"root\"]/div/div[2]/div/div[1]/div[1]/div[2]/div")
+            "//*[@id=\"root\"]/div/div[2]/div/div[1]/div[1]/div[2]/div/span")
         drop_down_item.click()
     except Exception:
         print("Error while navigating to language selection")
