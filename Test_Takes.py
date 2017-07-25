@@ -5,8 +5,8 @@ import time
 
 class Testing_For_Unavailbility(unittest.TestCase):
     def setUp(inst):
-        inst.driver = webdriver.Chrome('C:/Users/ann_ejones/Documents/8Woc2017/node_modules/chromedriver/lib/chromedriver/chromedriver.exe'	)
-        inst.driver2 = webdriver.Chrome('C:/Users/ann_ejones/Documents/8Woc2017/node_modules/chromedriver/lib/chromedriver/chromedriver.exe')
+        inst.driver = webdriver.Chrome()
+        inst.driver2 = webdriver.Chrome()
         inst.driver.implicitly_wait(30)
         inst.driver2.implicitly_wait(30)
         inst.driver.maximize_window()

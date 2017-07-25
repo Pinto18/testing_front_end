@@ -18,7 +18,8 @@ url = unittest.TestLoader().loadTestsFromTestCase(URLTestCases)
 takes = unittest.TestLoader().loadTestsFromTestCase(Testing_For_Unavailbility)
 
 # create a test suite combining search_text and home_page_test
-test_suite = unittest.TestSuite([audio, zip_file_test, time_out, url])
+#test_suite = unittest.TestSuite([audio, zip_file_test, time_out, url])
+test_suite = unittest.TestSuite([url])
 
 # open the report file
 outfile = open(dir + "/TestSummary.html", "w")

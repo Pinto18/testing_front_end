@@ -6,56 +6,44 @@ import time
 
 class URLTestCases(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome('C:/Users/ann_ejones/Documents/8Woc2017/node_modules/chromedriver/lib/chromedriver/chromedriver.exe')
+        self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
         self.driver.get('localhost:3000')
+        self.base_url = 'http://localhost:3000/projects?book='
+        self.books = ['gen', 'mrk', 'rom', 'exo']
+        self.error_message = "There was a problem loading the data: Cannot read property 'book' of undefined"
         # TODO: create array of all possible urls
-        # TODO: create a url that could never exist within the web app
 
-    def test_url_not_in_db_generates_error_message(self):
-        """Testing that URLs that are possible within
-        the scope of the web app, but do not link to anything
-        in the DB will generate an error message to the user
-        when entered"""
+    def test_that_entering_a_valid_url_produces_no_error_messages(self):
+        """Testing that if the user enters a valid URL for a book that
+        exist within the scope of the web app, then no error message
+        appears."""
 
-    def test_that_entering_impossible_attribute_url_generates_error(self):
-        """Testing that if the user enters a URL that could never
-        exist within the scope of the web app, then an error message
-        will appear to the user."""
+        self.driver.get(self.base_url + "mrk")
+        self.assertFalse(isElementPresent(self.driver,
+                                         "(//*[contains(text(), '" + self.error_message + "')] | //*[@value='" + self.error_message + "'])"))
 
-        base_url = 'http://localhost:3000/projects/'
-        books = ['mrk', 'rom', 'luk']
-        text = "Error"
-        # i tried for arrays and it doesn't make sense, Nick,
-        # but I still think one url does the job...
-        url = 0
-        i = len(books)
-        while i > 0:
-            self.driver.get(base_url + str(books[i-1]))
+    def test_entering_url_for_book_not_in_db(self):
+        """Testing that when the user enters the url for
+        a book that does not yet exist within the db will
+        produce an error message"""
+
+        for index in range(0, len(self.books)):
+            self.driver.get(self.base_url + "?=" + self.books[index])
             time.sleep(1)
-            i -= 1
-        self.assertTrue(isElementPresent(self.driver,
-                                         "(//*[contains(text(), '" + text + "')] | //*[@value='" + text + "'])"))
+            self.assertTrue(isElementPresent(self.driver,
+                                             "(//*[contains(text(), '" + self.error_message + "')] | //*[@value='" + self.error_message + "'])"))
 
     def test_that_entering_impossible_url_generates_error(self):
         """Testing that if the user enters a URL that could never
         exist within the scope of the web app, then an error message
         will appear to the user."""
 
-        base_url = ['http://localhost:3000/takes?book=mrk&chapter=88',
-                    'http://localhost:3000/project', 'http://localhost:3000/projects?lang',
-                    ]
-        text = "error"
-        #i tried for arrays, Nick, but I still think one url does the job...
-        url = 0
-        i = len(base_url)
-        while i > 0:
-            self.driver.get(base_url[i-1])
-            time.sleep(1)
-            i -= 1
+        # this url will never exist within the scope of the web app
+        self.driver.get('http://localhost:3000/product')
         self.assertTrue(isElementPresent(self.driver,
-                                         "(//*[contains(text(), '" + text + "')] | //*[@value='" + text + "'])"))
+                                         "(//*[contains(text(), '" + self.error_message + "')] | //*[@value='" + self.error_message + "'])"))
 
     def tearDown(self):
         self.driver.quit()

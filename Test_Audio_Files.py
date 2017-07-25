@@ -4,11 +4,11 @@ from selenium import webdriver
 import unittest
 
 class AudioFileTests(unittest.TestCase):
-    def setUp(inst):
-        inst.driver = webdriver.Chrome('C:/Users/ann_ejones/Documents/8Woc2017/node_modules/chromedriver/lib/chromedriver/chromedriver.exe'	)
-        inst.driver.implicitly_wait(30)
-        inst.driver.maximize_window()
-        inst.driver.get('localhost:3000')
+    def setUp(self):
+        self.driver = webdriver.Chrome()
+        self.driver.implicitly_wait(30)
+        self.driver.maximize_window()
+        self.driver.get('localhost:3000')
 
     def test_two_audio_files_playing_simultaneously(self):
         """Testing that when one audio file is played after another

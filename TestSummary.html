@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Test Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-07-24 15:55:42</p>
-<p class='attribute'><strong>Duration:</strong> 0:02:07.579968</p>
-<p class='attribute'><strong>Status:</strong> Pass 4 Failure 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-07-25 11:13:25</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:18.586630</p>
+<p class='attribute'><strong>Status:</strong> Pass 1 Failure 2</p>
 
 <p class='description'>Front End Tests</p>
 </div>
@@ -222,16 +222,16 @@ function showOutput(id, name) {
 </tr>
 
 <tr class='failClass'>
-    <td>Test_Audio_Files.AudioFileTests</td>
+    <td>Test_URLs.URLTestCases</td>
+    <td>3</td>
     <td>1</td>
+    <td>2</td>
     <td>0</td>
-    <td>1</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c1',3)">Detail</a></td>
 </tr>
 
 <tr id='ft1.1' class='none'>
-    <td class='failCase'><div class='testcase'>test_two_audio_files_playing_simultaneously: Testing that when one audio file is played after another</div></td>
+    <td class='failCase'><div class='testcase'>test_entering_url_for_book_not_in_db: Testing that when the user enters the url for</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -247,8 +247,8 @@ function showOutput(id, name) {
         
 ft1.1: No such thing
 Traceback (most recent call last):
-  File "/Users/nicholasdipinto1/Desktop/Test_Front_End/Test_Audio_Files.py", line 40, in test_two_audio_files_playing_simultaneously
-    self.assertTrue(isElementPresent(self.driver, "/ *[ @ id = \"PlayBtn-2\"]"))
+  File "/Users/nicholasdipinto1/Desktop/Test_Front_End/Test_URLs.py", line 36, in test_entering_url_for_book_not_in_db
+    "(//*[contains(text(), '" + self.error_message + "')] | //*[@value='" + self.error_message + "'])"))
 AssertionError: False is not true
 
 
@@ -259,31 +259,23 @@ AssertionError: False is not true
     </td>
 </tr>
 
-<tr class='passClass'>
-    <td>Test_Zip_Files.ZipFileTestCases</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
-</tr>
-
-<tr id='pt2.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_that_user_cannot_submit_nothing: Testing that pressing the Submit button when no</div></td>
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_that_entering_a_valid_url_produces_no_error_messages: Testing that if the user enters a valid URL for a book that</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
         pass</a>
 
-    <div id='div_pt2.1' class="popup_window">
+    <div id='div_pt1.2' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt2.1: No such thing
+pt1.2: No such thing
+No such thing
 
 
         </pre>
@@ -293,90 +285,28 @@ pt2.1: No such thing
     </td>
 </tr>
 
-<tr class='passClass'>
-    <td>Test_Time_Outs.TimeOutTestCase</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
-</tr>
-
-<tr id='pt3.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_that_long_db_transactions_generate_error_message: Testing that any DB Transaction should cause</div></td>
+<tr id='ft1.3' class='none'>
+    <td class='failCase'><div class='testcase'>test_that_entering_impossible_url_generates_error: Testing that if the user enters a URL that could never</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
-        pass</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
+        fail</a>
 
-    <div id='div_pt3.1' class="popup_window">
+    <div id='div_ft1.3' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.3').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt3.1: No such thing
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='passClass'>
-    <td>Test_URLs.URLTestCases</td>
-    <td>2</td>
-    <td>2</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c4',2)">Detail</a></td>
-</tr>
-
-<tr id='pt4.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_that_entering_impossible_url_generates_error: Testing that if the user enters a URL that could never</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
-        pass</a>
-
-    <div id='div_pt4.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt4.1: No such thing
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt4.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_url_not_in_db_generates_error_message: Testing that URLs that are possible within</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.2')" >
-        pass</a>
-
-    <div id='div_pt4.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt4.2: No such thing
+ft1.3: No such thing
+No such thing
+No such thing
+Traceback (most recent call last):
+  File "/Users/nicholasdipinto1/Desktop/Test_Front_End/Test_URLs.py", line 46, in test_that_entering_impossible_url_generates_error
+    "(//*[contains(text(), '" + self.error_message + "')] | //*[@value='" + self.error_message + "'])"))
+AssertionError: False is not true
 
 
         </pre>
@@ -388,9 +318,9 @@ pt4.2: No such thing
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>5</td>
-    <td>4</td>
+    <td>3</td>
     <td>1</td>
+    <td>2</td>
     <td>0</td>
     <td>&nbsp;</td>
 </tr>

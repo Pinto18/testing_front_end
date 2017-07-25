@@ -5,11 +5,11 @@ import time
 
 
 class ZipFileTestCases(unittest.TestCase):
-    def setUp(inst):
-        inst.driver = webdriver.Chrome('C:/Users/ann_ejones/Documents/8Woc2017/node_modules/chromedriver/lib/chromedriver/chromedriver.exe'	)
-        inst.driver.implicitly_wait(30)
-        inst.driver.maximize_window()
-        inst.driver.get('localhost:3000')
+    def setUp(self):
+        self.driver = webdriver.Chrome()
+        self.driver.implicitly_wait(30)
+        self.driver.maximize_window()
+        self.driver.get('localhost:3000')
 
     def test_that_user_cannot_submit_nothing(self):
         """Testing that pressing the Submit button when no
@@ -19,7 +19,6 @@ class ZipFileTestCases(unittest.TestCase):
         navigate_to_projects_page(self.driver)
         selecting_language_filter(self.driver)
         selecting_a_project(self.driver)
-
         self.submit_button = self.driver.find_element_by_xpath("//*[@id=\"root\"]/div/div[2]/div/form/button")
         self.submit_button.click()
         text = "There was an error uploading the file: Error: Request failed with status code 400"
@@ -33,11 +32,11 @@ class ZipFileTestCases(unittest.TestCase):
         navigate_to_projects_page(self.driver)
         selecting_language_filter(self.driver)
         selecting_a_project(self.driver)
-        # Manually upload...during test
-        time.sleep(2)
-        self.choose_file = self.driver.find_element_by_xpath('//*[@id="root"]/div/div[2]/div/form/div/input')
-        self.choose_file.click()
-        time.sleep(20)
+        path = "/Users/nicholasdipinto1/Desktop/Test_Front_End/API_backend_requirements (1).txt"
+        self.choose_file = self.driver.find_element_by_css_selector("input[type=\"file\"]")
+        self.choose_file.send_keys(path)
+        self.submit_button = self.driver.find_element_by_xpath("//*[@id=\"root\"]/div/div[2]/div/form/button")
+        self.submit_button.click()
         text = "There was an error uploading the file:"
         self.assertTrue(isElementPresent(self.driver,
                                          "(//*[contains(text(), '" + text + "')] | //*[@value='" + text + "'])"))
@@ -51,15 +50,15 @@ class ZipFileTestCases(unittest.TestCase):
         navigate_to_projects_page(self.driver)
         selecting_language_filter(self.driver)
         selecting_a_project(self.driver)
-        time.sleep(2)
-        # Manually upload...during test
-        self.choose_file = self.driver.find_element_by_xpath('//*[@id="root"]/div/div[2]/div/form/div/input')
-        self.choose_file.click()
-        time.sleep(10)
+        path = "/Users/nicholasdipinto1/Desktop/Test_Front_End/new 3.tr"
+        self.choose_file = self.driver.find_element_by_css_selector("input[type=\"file\"]")
+        self.choose_file.send_keys(path)
+        self.submit_button = self.driver.find_element_by_xpath("//*[@id=\"root\"]/div/div[2]/div/form/button")
+        self.submit_button.click()
         text = "There was an error uploading the file:"
         self.assertTrue(isElementPresent(self.driver,
                                          "(//*[contains(text(), '" + text + "')] | //*[@value='" + text + "'])"))
 
-    def tearDown(inst):
+    def tearDown(self):
         # close the browser window
         self.driver.quit()
