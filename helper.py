@@ -1,5 +1,6 @@
 from selenium.common.exceptions import NoSuchElementException
-
+import time
+base_url = 'localhost:8000/api/projects/'
 
 # helper method for navigating to the Projects page of the website
 def navigate_to_projects_page(driver):
@@ -62,6 +63,38 @@ def selecting_a_chunk(driver):
 def play_audio_file(driver):
     play_button = driver.find_element_by_xpath('//*[@id="Triangle"]')
     play_button.click()
+
+# helper method to project object through back-end api
+def create_project_object(driver):
+    driver.get('localhost:8000/api/projects/')
+    raw_data = driver.find_element_by_xpath('//*[@id="content"]/div[2]/ul/li[2]/a')
+    raw_data.click()
+    edit_raw_data = driver.find_element_by_xpath('//*[@id="id__content"]')
+    edit_raw_data.clear()
+    edit_raw_data.send_keys("""{"version": "000", "mode": "chunk", "anthology": "me", "book": 3
+     }""")
+    post_raw_data = driver.find_element_by_xpath(
+        '//*[@id="post-generic-content-form"]/form/fieldset/div[3]/button')
+    post_raw_data.click()
+    time.sleep(2)
+    # finding project id number
+    project_id = driver.find_element_by_xpath('//*[@id="content"]/div[1]/div[4]/pre/span[7]')
+    append_id = project_id.text
+    # a = append_id.split("'")
+    a = append_id.encode('utf-8')
+    time.sleep(1)
+    return a
+
+
+def delete_project_object(driver):
+    driver.get(base_url + create_project_object(driver))
+    delete_project = driver.find_element_by_xpath('//*[@id="content"]/button')
+    delete_project.click()
+    time.sleep(2)
+    delete_warning = driver.find_element_by_xpath('//*[@id="deleteModal"]/div/div/div[2]/form/button')
+    delete_warning.click()
+    time.sleep(1)
+
 
 
 def isElementPresent(driver, locator):

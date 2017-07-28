@@ -6,13 +6,14 @@ import time
 
 class URLTestCases(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome('C:/Users/ann_ejones/Documents/8Woc2017/node_modules/chromedriver/lib/chromedriver/chromedriver.exe')
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
         self.driver.get('localhost:3000')
         self.base_url = 'http://localhost:3000/projects?book='
         self.books = ['gen', 'mrk', 'rom', 'exo']
         self.error_message = "There was a problem loading the data: Cannot read property 'book' of undefined"
+        self.invalid_data = "foo"
         # TODO: create array of all possible urls
 
     def test_that_entering_a_valid_url_produces_no_error_messages(self):

@@ -6,6 +6,7 @@ from Test_Zip_Files import ZipFileTestCases
 from Test_Time_Outs import TimeOutTestCase
 from Test_URLs import URLTestCases
 from Test_Takes import Testing_For_Unavailbility
+from Test_Invalid_Fields import DatabaseTests
 
 # get the directory path to output report file
 dir = os.getcwd()
@@ -16,10 +17,11 @@ zip_file_test = unittest.TestLoader().loadTestsFromTestCase(ZipFileTestCases)
 time_out = unittest.TestLoader().loadTestsFromTestCase(TimeOutTestCase)
 url = unittest.TestLoader().loadTestsFromTestCase(URLTestCases)
 takes = unittest.TestLoader().loadTestsFromTestCase(Testing_For_Unavailbility)
+database = unittest.TestLoader().loadTestsFromTestCase(DatabaseTests)
 
 # create a test suite combining search_text and home_page_test
 #test_suite = unittest.TestSuite([audio, zip_file_test, time_out, url])
-test_suite = unittest.TestSuite([url])
+test_suite = unittest.TestSuite([database])
 
 # open the report file
 outfile = open(dir + "/TestSummary.html", "w")
