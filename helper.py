@@ -52,7 +52,7 @@ def selecting_a_chapter(driver):
 def selecting_a_chunk(driver):
     try:
         chunk_selection = driver.find_element_by_xpath(
-            "//*[@id=\"root\"]/div/div[2]/div/div[1]/div/div/div/div[1]")
+            '//*[@id="root"]/div/div[2]/div/div[2]/div/div/div[1]/center/font')
         chunk_selection.click()
     except Exception:
         print("Error while selecting a chunk")
