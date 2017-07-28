@@ -71,7 +71,7 @@ def create_project_object(driver):
     raw_data.click()
     edit_raw_data = driver.find_element_by_xpath('//*[@id="id__content"]')
     edit_raw_data.clear()
-    edit_raw_data.send_keys("""{"version": "000", "mode": "chunk", "anthology": "me", "book": 3
+    edit_raw_data.send_keys("""{"version": "000", "mode": "chunk", "anthology": "me", "language": 4
      }""")
     post_raw_data = driver.find_element_by_xpath(
         '//*[@id="post-generic-content-form"]/form/fieldset/div[3]/button')
@@ -86,8 +86,8 @@ def create_project_object(driver):
     return a
 
 
-def delete_project_object(driver):
-    driver.get(base_url + create_project_object(driver))
+def delete_project_object(driver, a):
+    driver.get(base_url + a)
     delete_project = driver.find_element_by_xpath('//*[@id="content"]/button')
     delete_project.click()
     time.sleep(2)
