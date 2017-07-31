@@ -33,11 +33,15 @@ class Testing_For_Unavailability(unittest.TestCase):
         selecting_a_chunk(self.driver2)
 
         # user2 deletes the take user1 will rate
-        # self.delete_take = self.driver2.find_element_by_xpath()
+        self.delete_take = self.driver2.find_element_by_xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/div/div/div[2]/"
+                                                                            "div/div[1]/div/div[1]/table/thead/tr/th/"
+                                                                            "button")
+        self.delete_take.click()
         time.sleep(5)
         # user1 wants to change star rating
-        self.change_rating = self.driver.find_element_by_xpath('//*[@id="root"]/div/div[2]/div/div[2]/div/div/'
-             'div[2]/div/div/div[2]/div/div/div[1]/table/td/div/div/div/div/div[2]')
+        self.change_rating = self.driver.find_element_by_xpath('//*[@id="root"]/div/div[2]/div/div[2]/div/div/div[2]/'
+                                                               'div/div[1]/div/div[1]/table/td/div/div/div/div/div/div'
+                                                               '[3]/i')
         text = "Error"
         self.assertTrue(isElementPresent(self.driver,
                                          "(//*[contains(text(), '" + text + "')] | //*[@value='" + text + "'])"))

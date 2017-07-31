@@ -22,27 +22,28 @@ class AudioFileTests(unittest.TestCase):
         selecting_a_chapter(self.driver)
         selecting_a_chunk(self.driver)
 
-        # wait 60 seconds
-        time.sleep(15)
-        # 60 seconds derived form time it takes to load both chunks
+        # wait 15 seconds
+        time.sleep(5)
+        # 15 seconds derived form time it takes to load both chunks
         # value may change as chunks load faster
 
         # identify and click on two audio files to play
-        self.play_button1 = self.driver.find_element_by_xpath("//*[@id=\"PlayBtn-2\"]")
+        self.play_button1 = self.driver.find_element_by_xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/div/div/div[2]/"
+                                                              "div/div[1]/div/div[1]/table/td/div/div/div/div/div/"
+                                                              "div[2]/div[3]/button/i")
         self.play_button1.click()
-        self.play_button2 = self.driver.find_element_by_xpath("// *[ @ id = \"PlayBtn-2\"]")
-        # wait 3 seconds for first audio file to start playing
+        #allow first file to play a few seconds
         time.sleep(3)
+        self.play_button2 = self.driver.find_element_by_xpath("//*[@id=\"root\"]/div/div[2]/div/div[2]/div/div/div[2]/"
+                                                              "/div/div[1]/div/div[3]/table/td/div/div/div/div/div/div"
+                                                              "[2]/div[3]/button/i")
         self.play_button2.click()
+        #allow UI to change
+        time.sleep(2)
 
-        # verify that the first audio is paused now that second audio file is playing
-        self.assertTrue(isElementPresent(self.driver, "/ *[ @ id = \"PlayBtn-2\"]"))
-
-        # Clean Up Testing Environment
-        self.pause_button1 = self.driver.find_element_by_xpath("//*[@id=\"PauseBtn-2\"]")
-        self.pause_button1.click()
-        self.pause_button2 = self.driver.find_element_by_xpath("//*[@id=\"PauseBtn-2\"]")
-        self.pause_button2.click()
+        # verify that the first audio title is no longer playing,
+        # verify that second audio file is playing
+        self.assertTrue("take 2, chunk 1" in self.driver.page_source)
 
     # def test_that_audio_stops_playing_when_url_changes(self):
     #     """Test that navigating to a new URL while

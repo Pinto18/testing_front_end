@@ -12,7 +12,7 @@ class URLTestCases(unittest.TestCase):
         self.driver.get('localhost:3000')
         self.base_url = 'http://localhost:3000/projects?book='
         self.books = ['gen', 'mrk', 'rom', 'exo']
-        self.error_message = "This page doesn't exist."
+        self.error_message = "This page doesn't exist"
         self.invalid_data = "foo"
         # TODO: create array of all possible urls
 
@@ -43,8 +43,8 @@ class URLTestCases(unittest.TestCase):
 
         # this url will never exist within the scope of the web app
         self.driver.get('http://localhost:3000/product')
-        self.assertTrue(isElementPresent(self.driver,
-                                         "(//*[contains(text(), '" + self.error_message + "')] | //*[@value='" + self.error_message + "'])"))
+        time.sleep(3)
+        self.assertTrue(self.error_message in self.driver.page_source)
 
     def tearDown(self):
         self.driver.quit()

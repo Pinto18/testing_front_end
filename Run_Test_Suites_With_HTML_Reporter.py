@@ -2,7 +2,6 @@ import unittest
 import HTMLTestRunner
 import os
 from Test_Audio_Files import AudioFileTests
-from Test_Zip_Files import ZipFileTestCases
 from Test_Time_Outs import TimeOutTestCase
 from Test_URLs import URLTestCases
 from Test_Takes import Testing_For_Unavailability
@@ -13,16 +12,16 @@ dir = os.getcwd()
 
 # get all tests from SearchText and HomePageTest class
 audio = unittest.TestLoader().loadTestsFromTestCase(AudioFileTests)
-zip_file_test = unittest.TestLoader().loadTestsFromTestCase(ZipFileTestCases)
 time_out = unittest.TestLoader().loadTestsFromTestCase(TimeOutTestCase)
 url = unittest.TestLoader().loadTestsFromTestCase(URLTestCases)
 takes = unittest.TestLoader().loadTestsFromTestCase(Testing_For_Unavailability)
 database = unittest.TestLoader().loadTestsFromTestCase(DatabaseTests)
 
 # create a test suite combining search_text and home_page_test
-#test_suite = unittest.TestSuite([audio, zip_file_test, time_out, url])
-test_suite = unittest.TestSuite([database, url, audio])
-
+#this one for local database tests
+test_suite = unittest.TestSuite([database, url])
+#this one for rasberry pi
+#test_suite = unittest.TestSuite([audio])
 # open the report file
 outfile = open(dir + "/TestSummary.html", "w")
 
