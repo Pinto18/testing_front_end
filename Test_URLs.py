@@ -12,7 +12,7 @@ class URLTestCases(unittest.TestCase):
         self.driver.get('localhost:3000')
         self.base_url = 'http://localhost:3000/projects?book='
         self.books = ['gen', 'mrk', 'rom', 'exo']
-        self.error_message = "There was a problem loading the data: Cannot read property 'book' of undefined"
+        self.error_message = "This page doesn't exist."
         self.invalid_data = "foo"
         # TODO: create array of all possible urls
 
@@ -25,7 +25,7 @@ class URLTestCases(unittest.TestCase):
         self.assertFalse(isElementPresent(self.driver,
                                          "(//*[contains(text(), '" + self.error_message + "')] | //*[@value='" + self.error_message + "'])"))
 
-    def test_entering_url_for_book_not_in_db(self):
+    def test_entering_invalid_query_string_searching_in_db(self):
         """Testing that when the user enters the url for
         a book that does not yet exist within the db will
         produce an error message"""

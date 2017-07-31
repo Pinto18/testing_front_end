@@ -6,7 +6,7 @@ import unittest
 
 class TimeOutTestCase(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome('C:/Users/ann_ejones/Documents/8Woc2017/node_modules/chromedriver/lib/chromedriver/chromedriver.exe')
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
         self.driver.get('localhost:3000')
@@ -23,7 +23,7 @@ class TimeOutTestCase(unittest.TestCase):
             self.driver.set_page_load_timeout(20)
 
             # for loop to iterate through each project and navigate to their first chunks
-            for index in range(2, 3):  # only the seond and third projects have chapters to select from
+            for index in range(2, 3):  # only the second and third projects have chapters to select from
                 navigate_to_projects_page(self.driver)
                 self.drop_down_button = self.driver.find_element_by_xpath(
                     "//*[@id=\"root\"]/div/div[2]/div/div[1]/div[1]/i")

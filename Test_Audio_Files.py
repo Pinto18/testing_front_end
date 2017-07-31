@@ -5,7 +5,7 @@ import unittest
 
 class AudioFileTests(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome('C:/Users/ann_ejones/Documents/8Woc2017/node_modules/chromedriver/lib/chromedriver/chromedriver.exe')
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
         self.driver.get('localhost:3000')
@@ -23,7 +23,7 @@ class AudioFileTests(unittest.TestCase):
         selecting_a_chunk(self.driver)
 
         # wait 60 seconds
-        time.sleep(60)
+        time.sleep(15)
         # 60 seconds derived form time it takes to load both chunks
         # value may change as chunks load faster
 
@@ -46,7 +46,7 @@ class AudioFileTests(unittest.TestCase):
 
     # def test_that_audio_stops_playing_when_url_changes(self):
     #     """Test that navigating to a new URL while
-    #     an audio file is playing will cause the ausdio
+    #     an audio file is playing will cause the audio
     #     file to stop playing"""
     #     navigate_to_projects_page(self.driver)
     #     navigate_to_a_chunk(self.driver)

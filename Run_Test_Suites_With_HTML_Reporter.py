@@ -21,7 +21,7 @@ database = unittest.TestLoader().loadTestsFromTestCase(DatabaseTests)
 
 # create a test suite combining search_text and home_page_test
 #test_suite = unittest.TestSuite([audio, zip_file_test, time_out, url])
-test_suite = unittest.TestSuite([database])
+test_suite = unittest.TestSuite([database, url, audio])
 
 # open the report file
 outfile = open(dir + "/TestSummary.html", "w")
