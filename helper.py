@@ -94,6 +94,8 @@ def create_project_object(driver, json):
         print("Error while creating a project object")
     return True
 
+
+# helper method to delete project created in local database
 def delete_project_object(driver, a):
     driver.get(base_url + a)
     delete_project = driver.find_element_by_xpath('//*[@id="content"]/button')
@@ -102,6 +104,15 @@ def delete_project_object(driver, a):
     delete_warning = driver.find_element_by_xpath('//*[@id="deleteModal"]/div/div/div[2]/form/button')
     delete_warning.click()
     time.sleep(1)
+
+
+# fetching all href links in page
+def get_all_links_in_page(driver):
+    elems = driver.find_elements_by_xpath("//a[@href]")
+    urls = []
+    for elem in elems:
+        urls.append(elem.get_attribute("href"))
+    return urls
 
 
 
