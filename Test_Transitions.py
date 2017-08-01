@@ -23,7 +23,7 @@ class PageTransitionTestCases(unittest.TestCase):
         urls = get_all_links_in_page(self.driver)
         for index in range(0, len(urls)):
             self.driver.get(urls[index])
-            self.assertEqual(self.driver.current_url, urls[index])
+            self.assertIs()
 
     def tearDown(self):
         self.driver.quit()

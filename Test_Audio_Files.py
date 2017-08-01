@@ -45,17 +45,6 @@ class AudioFileTests(unittest.TestCase):
         # verify that second audio file is playing
         self.assertTrue("take 2, chunk 1" in self.driver.page_source)
 
-    # def test_that_audio_stops_playing_when_url_changes(self):
-    #     """Test that navigating to a new URL while
-    #     an audio file is playing will cause the audio
-    #     file to stop playing"""
-    #     navigate_to_projects_page(self.driver)
-    #     navigate_to_a_chunk(self.driver)
-    #     self.play_button1 = self.driver.find_element_by_xpath("//*[@id=\"PlayBtn-2\"]")
-    #     self.play_button1.click()
-    #     self.projects_button = self.driver.find_element_by_link_text("Projects")
-    #     self.projects_button.click()
-    #     self.assertTrue(!(Boolean.parseboolean(self.play_button1.get_attribute("ended"))))
 
     def tearDown(self):
         # close the browser window

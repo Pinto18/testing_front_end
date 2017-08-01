@@ -21,9 +21,10 @@ transition = unittest.TestLoader().loadTestsFromTestCase(PageTransitionTestCases
 
 # create a test suite combining search_text and home_page_test
 #this one for local database tests
-test_suite = unittest.TestSuite([database, url, transition])
+#test_suite = unittest.TestSuite([database, url, transition])
 #this one for rasberry pi
 #test_suite = unittest.TestSuite([audio])
+test_suite = unittest.TestSuite([takes])
 # open the report file
 outfile = open(dir + "/TestSummary.html", "w")
 
